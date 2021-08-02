@@ -2,9 +2,14 @@
 #include "KNNClassifier.h"
 #include "CSVPrinter.h"
 
+/**
+ * The main method. Invokes anything needed to classify things.
+ * @return 0 if everything worked. If something went wrong- other numbers.
+ */
 int main() {
-	string classifiedPath = "..\\classified.csv", unclassifiedPath = "..\\Unclassified.csv",
-			outputPath = "..\\output.csv";
+	string classifiedPath = ".\\classified.csv";
+	string unclassifiedPath = ".\\Unclassified.csv";
+	string outputPath = ".\\output.csv";
 	if (_argc==3){
 		classifiedPath = _argv[0];
 		unclassifiedPath = _argv[1];

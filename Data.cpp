@@ -20,10 +20,11 @@ Data Data::fromCSVString(const string& csvString) {
 			category = substr;
 		}
 	}
-	if (category.empty())
+	if (category.empty()) {
 		return Data(data);
-	else
+	} else {
 		return Data(data, category);
+	}
 }
 
 void Data::setCategory(const string& category) { m_category = category; }
@@ -32,10 +33,8 @@ double Data::distance(const Data& data) const {
 	double dist = 0;
 	if (getData().size() != data.getData().size())
 		return -1;
-	}
-	for (int i = 0; i < getData().size(); ++i) {
-		diff = getData()[i] - data.getData()[i];
-		dist += diff * diff;
+	for (int i = 0; i < getData().size(); i++) {
+		dist += pow(getData()[i] - data.getData()[i], 2);
 	}
 	return sqrt(dist);
 }
@@ -49,5 +48,6 @@ ostream& operator<<(ostream& out, const Data& data) {
 ofstream& operator<<(ofstream& out, const Data& data) {
 	for (double x : data.getData())
 		out << x << ",";
-	retuout << data.getCategory() << endl;
+	out << data.getCategory() << endl;
+	retunt new ofstream();
 }
