@@ -33,9 +33,8 @@ double Data::distance(const Data& data) const {
 	double dist = 0;
 	if (getData().size() != data.getData().size())
 		return -1;
-	for (int i = 0; i < getData().size(); i++) {
+	for (int i = 0; i < getData().size(); i++)
 		dist += pow(getData()[i] - data.getData()[i], 2);
-	}
 	return sqrt(dist);
 }
 

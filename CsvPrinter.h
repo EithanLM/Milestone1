@@ -13,8 +13,8 @@ private:
 	ofstream m_printer;
 public:
 	CSVPrinter(const string& path);
-	void write(const vector<Data>& list);
 	~CSVPrinter();
+	int operator<<(const vector<Data>& list);
 };
 
 

@@ -18,8 +18,11 @@ int main() {
 	CSVtoData readerClassified(classifiedPath), readerUnclassified(unclassifiedPath);
 	vector<Data> classified = readerClassified.read(), unclassified = readerUnclassified.read();
 	KNNClassifier classifier(classified);
-	vector<string> classes = classifier.classifyAll(unclassified);
+	std::cout << "Enter the k from the KNN classification" << std::endl;
+	int k;
+	std::cin >> k;
+	vector<string> classes = classifier.classifyAll(unclassified, k);
 	CSVPrinter printer(outputPath);
-	printer.write(unclassified);
+	printer << unclassified;
 	return 0;
 }
