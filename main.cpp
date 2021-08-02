@@ -3,7 +3,7 @@
 #include "CSVPrinter.h"
 
 /**
- * The main method. Invokes anything needed to classify things.
+ * The main method.
  * @return 0 if everything worked. If something went wrong- other numbers.
  */
 int main() {
