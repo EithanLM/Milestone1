@@ -8,9 +8,12 @@ vector<Data> CSVtoData::read(){
 	while (!m_csvIn.eof()) {
 		getline(m_csvIn, line);
 		if (!line.empty()) {
-			Data data = Data::fromCSVString(line);
-			dataList.push_back(data);
+			dataList.push_back(Data::fromCSVString(line));
 		}
 	}
 	return dataList;
+}
+
+CSVtoData::~CSVtoData() {
+	m_csvIn.close();
 }

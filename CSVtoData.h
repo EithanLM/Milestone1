@@ -15,6 +15,7 @@ private:
 public:
 	CSVtoData(const string& filePath);
 	vector<Data> read();
+	~CSVtoData();
 };
 
 

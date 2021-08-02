@@ -29,8 +29,8 @@ Data Data::fromCSVString(const string& csvString) {
 void Data::setCategory(const string& category) { m_category = category; }
 
 double Data::distance(const Data& data) const {
-	double dist = 0, diff;
-	if (getData().size() != data.getData().size()) {
+	double dist = 0;
+	if (getData().size() != data.getData().size())
 		return -1;
 	}
 	for (int i = 0; i < getData().size(); ++i) {
@@ -40,8 +40,14 @@ double Data::distance(const Data& data) const {
 	return sqrt(dist);
 }
 
-ostream& operator<<(ostream& out, Data& data) {
+ostream& operator<<(ostream& out, const Data& data) {
 	for (double x : data.getData())
-		out << x << ", ";
-	return out << "Category: " << data.getCategory();
+		out << x << ",";
+	return out << data.getCategory();
+}
+
+ofstream& operator<<(ofstream& out, const Data& data) {
+	for (double x : data.getData())
+		out << x << ",";
+	retuout << data.getCategory() << endl;
 }

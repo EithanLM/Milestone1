@@ -1,5 +1,6 @@
 #include "CSVtoData.h"
 #include "KNNClassifier.h"
+#include "CSVPrinter.h"
 
 int main() {
 	string classifiedPath = "..\\classified.csv", unclassifiedPath = "..\\Unclassified.csv",
@@ -13,4 +14,7 @@ int main() {
 	vector<Data> classified = readerClassified.read(), unclassified = readerUnclassified.read();
 	KNNClassifier classifier(classified);
 	vector<string> classes = classifier.classifyAll(unclassified);
+	CSVPrinter printer(outputPath);
+	printer.write(unclassified);
+	return 0;
 }

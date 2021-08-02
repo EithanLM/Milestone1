@@ -4,11 +4,14 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <fstream>
 #include <cmath>
 
 using std::vector;
 using std::string;
 using std::ostream;
+using std::ofstream;
+using std::endl;
 using std::stringstream;
 using std::exception;
 
@@ -26,5 +29,7 @@ public:
 };
 
 ostream& operator<<(ostream& out, Data& data);
+
+ofstream& operator<<(ofstream& out, const Data& data);
 
 #endif //EX1_DATA_H
