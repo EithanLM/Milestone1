@@ -11,6 +11,9 @@ using std::pair;
 using std::map;
 using std::less;
 
+/**
+ * A class that is responsible for classifying data.
+ */
 class KNNClassifier {
 private:
 	vector<Data> m_classified;

@@ -3,6 +3,7 @@
 KNNClassifier::KNNClassifier(vector<Data>& classified) : m_classified(classified) { }
 
 string KNNClassifier::classify(const Data& data, int k) const {
+	// Calculating the distance from the classified data.
 	vector<pair<double, string>> distances(m_classified.size());
 	for (int i = 0; i < m_classified.size(); ++i) {
 		distances[i] = pair<double, string>(data.distance(m_classified[i]), m_classified[i].getCategory());

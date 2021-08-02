@@ -15,6 +15,9 @@ using std::endl;
 using std::stringstream;
 using std::exception;
 
+/**
+ * A class representing a piece of data, and its category.
+ */
 class Data {
 private:
 	vector<double> m_data;

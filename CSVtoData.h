@@ -9,6 +9,9 @@
 
 using std::ifstream;
 
+/**
+ * A class responsible for taking data in csv format and creating Data pieces from the data.
+ */
 class CSVtoData {
 private:
 	ifstream m_csvIn;
