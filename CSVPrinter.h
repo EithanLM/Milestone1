@@ -8,6 +8,9 @@ using std::string;
 using std::ofstream;
 using std::endl;
 
+/**
+ * A class responsible for printing data in a csv format to a csv file.
+ */
 class CSVPrinter {
 private:
 	ofstream m_printer;
