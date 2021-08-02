@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Data.h"
 
-using namespace std;
+using std::ifstream;
 
 class CSVtoData {
 private:

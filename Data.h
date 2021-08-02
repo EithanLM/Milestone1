@@ -6,7 +6,11 @@
 #include <sstream>
 #include <cmath>
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::ostream;
+using std::stringstream;
+using std::exception;
 
 class Data {
 private:

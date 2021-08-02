@@ -16,7 +16,7 @@ string KNNClassifier::classify(const Data& data, int k = 1) const {
 		}
 		classes[distances[i].second]++;
 	}
-	return "class";
+	return "class"; // to do
 }
 
 vector<string> KNNClassifier::classifyAll(const vector<Data>& dataList, int k) const {
