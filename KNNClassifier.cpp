@@ -5,8 +5,14 @@ KNNClassifier::KNNClassifier(vector<Data>& classified) : m_classified(classified
 string KNNClassifier::classify(const Data& data, int k) const {
 	// Calculating the distance from the classified data.
 	vector<pair<double, string>> distances(m_classified.size());
-	for (int i = 0; i < m_classified.size(); ++i) {
-		distances[i] = pair<double, string>(data.distance(m_classified[i]), m_classified[i].getCategory());
+	/*for (auto iterThis = m_data.begin(), iterData = data.m_data.begin();
+	iterThis != getData().end() && iterData != data.getData().end(); ++iterThis, ++iterData) {
+		dist += pow(*iterThis - *iterData, 2);
+	}*/
+	auto iterDist = distances.begin();
+	auto iterClassified = m_classified.begin();
+	for (; iterDist != distances.end() && iterClassified != m_classified.end() ; ++iterDist, ++iterClassified) {
+		*iterDist = pair<double, string>(data.distance(*iterClassified), (*iterClassified).getCategory());
 	}
 	sort(distances.begin(), distances.end(), less<pair<double, string>>());
 	map<string, unsigned int> types;
