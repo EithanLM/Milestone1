@@ -34,7 +34,7 @@ double Data::distance(const Data& data) const {
 	double dist = 0;
 	if (getData().size() != data.getData().size())
 		return -1;
-	for (auto iterThis = m_data.begin(), iterData = data.m_data.begin();
+	for (vector<double>::const_iterator iterThis = m_data.begin(), iterData = data.m_data.begin();
 		 iterThis != getData().end() && iterData != data.getData().end(); ++iterThis, ++iterData) {
 		dist += pow(*iterThis - *iterData, 2);
 	}

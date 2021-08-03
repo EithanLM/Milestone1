@@ -19,8 +19,8 @@ private:
 	vector<Data> m_classified;
 public:
 	KNNClassifier(vector<Data>& classified);
-	string classify(const Data& data, int k = 1) const;
-	vector<string> classifyAll(vector<Data>& dataList, int k = 1) const;
+	string classify(Data& data, int k) const;
+	vector<string> classifyAll(vector<Data>& dataList, int k) const;
 };
 
 #endif //EX1_KNN_CLASSIFIER_H

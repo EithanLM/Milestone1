@@ -9,14 +9,14 @@
  * Exactly 3 are required or default values will be used.
  * @return 0 if everything worked. If something went wrong- other numbers.
  */
-int main() {
-	string classifiedPath = ".\\classified.csv";
-	string unclassifiedPath = ".\\Unclassified.csv";
-	string outputPath = ".\\output.csv";
-	if (_argc==3){
-		classifiedPath = _argv[0];
-		unclassifiedPath = _argv[1];
-		outputPath = _argv[2];
+int main(int argc, char** argv) {
+	string classifiedPath = "classified.csv";
+	string unclassifiedPath = "Unclassified.csv";
+	string outputPath = "output.csv";
+	if (argc==4){
+		classifiedPath = argv[1];
+		unclassifiedPath = argv[2];
+		outputPath = argv[3];
 	}
 	CSVtoData readerClassified(classifiedPath), readerUnclassified(unclassifiedPath);
 	vector<Data> classified = readerClassified.read(), unclassified = readerUnclassified.read();
