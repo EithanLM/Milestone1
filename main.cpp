@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 	string classifiedPath = "classified.csv";
 	string unclassifiedPath = "Unclassified.csv";
 	string outputPath = "output.csv";
-	if (argc==4){
+	if (argc == 4) {
 		classifiedPath = argv[1];
 		unclassifiedPath = argv[2];
 		outputPath = argv[3];
@@ -26,6 +26,6 @@ int main(int argc, char** argv) {
 	std::cin >> k;
 	vector<string> classes = classifier.classifyAll(unclassified, k);
 	CSVPrinter printer(outputPath);
-	printer << unclassified;
+	printer << classes;
 	return 0;
 }

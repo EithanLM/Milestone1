@@ -17,3 +17,12 @@ int CSVPrinter::operator<<(const vector<Data>& list) {
 	}
 	return 0;
 }
+
+int CSVPrinter::operator<<(const vector<string>& list) {
+	for (const string& line: list) {
+		m_printer << line;
+		if (&line != &list.back())
+			m_printer << endl;
+	}
+	return 0;
+}

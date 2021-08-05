@@ -18,6 +18,7 @@ public:
 	CSVPrinter(const string& path);
 	~CSVPrinter();
 	int operator<<(const vector<Data>& list);
+	int operator<<(const vector<string>& list);
 };
 
 

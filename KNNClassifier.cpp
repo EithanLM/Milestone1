@@ -27,7 +27,7 @@ string KNNClassifier::classify(Data& data, int k) const {
 }
 
 vector<string> KNNClassifier::classifyAll(vector<Data>& dataList, int k) const {
-	vector<string> classes(dataList.size());
+	vector<string> classes;
 	for (Data& data: dataList) {
 		string type = classify(data, k);
 		classes.push_back(type);
