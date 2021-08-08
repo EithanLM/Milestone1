@@ -23,8 +23,6 @@ const vector<double>& Data::getData() const { return m_data; }
 
 const string& Data::getCategory() const { return m_category; }
 
-void Data::setCategory(const string& category) { m_category = category; }
-
 double Data::distance(const Data& data) const {
 	double dist = 0;
 	if (getData().size() != data.getData().size())

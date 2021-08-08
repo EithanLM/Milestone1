@@ -48,12 +48,6 @@ public:
 	const string& getCategory() const;
 	
 	/**
-	 * Setter of the category.
-	 * @param category the new category.
-	 */
-	void setCategory(const string& category);
-	
-	/**
 	 * Calculates the Euclidean distance from the given data.
 	 * @param data the given data.
 	 * @return the distance.
