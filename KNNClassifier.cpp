@@ -2,7 +2,7 @@
 
 KNNClassifier::KNNClassifier(vector<Data>& classified) : m_classified(classified) { }
 
-string KNNClassifier::classify(Data& data, int k) const {
+string KNNClassifier::classify(const Data& data, int k) const {
 	// Calculating the distance from the classified data.
 	vector<pair<double, string> > distances(m_classified.size());
 	vector<pair<double, string> >::iterator iterDist;
@@ -31,7 +31,6 @@ vector<string> KNNClassifier::classifyAll(vector<Data>& dataList, int k) const {
 	for (Data& data: dataList) {
 		string type = classify(data, k);
 		classes.push_back(type);
-		data.setCategory(type);
 	}
 	return classes;
 }

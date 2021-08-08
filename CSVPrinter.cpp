@@ -6,23 +6,23 @@ CSVPrinter::~CSVPrinter() {
 	m_printer.close();
 }
 
-/**
- * Writes a list of Data to the csv file.
- * @param list the Data list
- * @return 0 if succeeded.
- */
-int CSVPrinter::operator<<(const vector<Data>& list) {
-	for (const Data& data: list) {
-		m_printer << data;
-	}
-	return 0;
+void CSVPrinter::operator<<(const Data& data) {
+	for (double x : data.getData())
+		m_printer << x << ",";
+	m_printer << data.getCategory();
 }
 
-int CSVPrinter::operator<<(const vector<string>& list) {
+void CSVPrinter::operator<<(const vector<Data>& list) {
+	for (const Data& data: list) {
+		(*this) << data;
+		m_printer << endl;
+	}
+}
+
+void CSVPrinter::operator<<(const vector<string>& list) {
 	for (const string& line: list) {
 		m_printer << line;
 		if (&line != &list.back())
 			m_printer << endl;
 	}
-	return 0;
 }

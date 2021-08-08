@@ -2,10 +2,6 @@
 
 CSVtoData::CSVtoData(const string& filePath) : m_csvIn(filePath) { }
 
-/**
- * Reads the csv file and creates the Data.
- * @return the formatted Data.
- */
 vector<Data> CSVtoData::read(){
 	string line;
 	vector<Data> dataList;
