@@ -13,7 +13,7 @@ class CSVPrinter {
 private:
 	ofstream m_printer;
 public:
-
+	
 	/**
 	 * Constructor.
 	 * @param path the path to the file to write to.

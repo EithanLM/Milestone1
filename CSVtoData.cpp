@@ -2,7 +2,7 @@
 
 CSVtoData::CSVtoData(const string& filePath) : m_csvIn(filePath) { }
 
-vector<Data> CSVtoData::read(){
+vector<Data> CSVtoData::read() {
 	string line;
 	vector<Data> dataList;
 	while (!m_csvIn.eof()) {

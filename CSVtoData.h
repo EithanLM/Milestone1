@@ -13,7 +13,7 @@ class CSVtoData {
 private:
 	ifstream m_csvIn;
 public:
-
+	
 	/**
 	 * Constructor.
 	 * @param filePath the path to the file to read from.

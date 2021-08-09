@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
 		unclassifiedPath = argv[2];
 		outputPath = argv[3];
 	}
-	std::cout << "Enter the k from the KNN classification" << std::endl;
+	std::cout << "Enter the k from the KNN." << std::endl;
 	int k;
 	std::cin >> k;
 	CSVtoData readerClassified(classifiedPath), readerUnclassified(unclassifiedPath);
