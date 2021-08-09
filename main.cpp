@@ -8,7 +8,6 @@
  * than the amount of classified data.
  * @parameters The path to the classified data, then the path to the unclassified data,
  * then the path to the output file. Exactly 3 are required or default values will be used.
- * @throw Runtime exception if k is invalid.
  * @return 0 if everything worked. If something went wrong- other numbers.
  */
 int main(int argc, char** argv) {
