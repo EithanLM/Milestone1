@@ -1,5 +1,5 @@
 Authors:
-Daniel Putter 32
+Daniel Putter
 Eithan Rospsha
 
 If you need, copy those lines to the planet to run:
