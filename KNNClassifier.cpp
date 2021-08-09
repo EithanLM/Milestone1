@@ -2,7 +2,7 @@
 
 KNNClassifier::KNNClassifier(vector<Data>& classified) : m_classified(classified) { }
 
-string KNNClassifier::classify(const Data& data, int k) const {
+string KNNClassifier::classify(const Data& data, unsigned int k) const {
 	// Calculating the distance from the classified data.
 	vector<pair<double, string> > distances(m_classified.size());
 	vector<pair<double, string> >::iterator iterDist;
@@ -13,7 +13,7 @@ string KNNClassifier::classify(const Data& data, int k) const {
 	}
 	sort(distances.begin(), distances.end(), less<pair<double, string>>());
 	map<string, unsigned int> types;
-	for (int i = 0; i < k; ++i) {
+	for (int i = 0; i < std::min<unsigned int>(k, distances.size()); ++i) {
 		if (!types.count(distances[i].second))
 			types[distances[i].second] = 0;
 		types[distances[i].second]++;
@@ -26,7 +26,7 @@ string KNNClassifier::classify(const Data& data, int k) const {
 	return classType.first;
 }
 
-vector<string> KNNClassifier::classifyAll(const vector<Data>& dataList, int k) const {
+vector<string> KNNClassifier::classifyAll(const vector<Data>& dataList, unsigned int k) const {
 	vector<string> classes;
 	for (const Data& data: dataList) {
 		string type = classify(data, k);
