@@ -2,6 +2,10 @@ Authors:
 Daniel Putter
 Eithan Rospsha
 
+If you need, copy those lines to the planet to run:
+g++ *.cpp -std=c++11
+./a.out <classified data path> <unclassified data path> <output path>
+
 How to use:
 The arguments to main: the path to the classified data, then the path to the unclassified data,
 then the path to the output file. Exactly 3 are required or default values will be used.
