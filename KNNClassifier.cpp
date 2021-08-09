@@ -19,16 +19,16 @@ string KNNClassifier::classify(const Data& data, int k) const {
 		types[distances[i].second]++;
 	}
 	pair<string, unsigned int> classType;
-	for (pair<string, unsigned int> typeAmount: types) {
+	for (const pair<string, unsigned int> typeAmount: types) {
 		if (typeAmount.second > classType.second)
 			classType = typeAmount;
 	}
 	return classType.first;
 }
 
-vector<string> KNNClassifier::classifyAll(vector<Data>& dataList, int k) const {
+vector<string> KNNClassifier::classifyAll(const vector<Data>& dataList, int k) const {
 	vector<string> classes;
-	for (Data& data: dataList) {
+	for (const Data& data: dataList) {
 		string type = classify(data, k);
 		classes.push_back(type);
 	}

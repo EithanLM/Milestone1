@@ -37,7 +37,7 @@ public:
 	 * @param k the k of KNN.
 	 * @return a vector of the categories of the units.
 	 */
-	vector<string> classifyAll(vector<Data>& dataList, int k) const;
+	vector<string> classifyAll(const vector<Data>& dataList, int k) const;
 };
 
 #endif //EX1_KNN_CLASSIFIER_H

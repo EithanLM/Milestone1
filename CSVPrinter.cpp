@@ -2,9 +2,7 @@
 
 CSVPrinter::CSVPrinter(const string& path) : m_printer(path) { }
 
-CSVPrinter::~CSVPrinter() {
-	m_printer.close();
-}
+CSVPrinter::~CSVPrinter() { m_printer.close(); }
 
 void CSVPrinter::operator<<(const Data& data) {
 	for (double x : data.getData())

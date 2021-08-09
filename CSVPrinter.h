@@ -7,7 +7,7 @@
 using std::ofstream;
 
 /**
- * A class responsible for printing data in a csv format to a csv file.
+ * A class responsible for printing data to a csv file.
  */
 class CSVPrinter {
 private:
